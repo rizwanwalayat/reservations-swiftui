@@ -19,16 +19,27 @@ import SwiftUI
 //    }
 //}
 struct ContentView: View {
+    @State var inputName: String = ""
     @State var personCount: Int = 1
     @State var showLogo: Bool = true
     @ObservedObject var myClass = MyClass()
     var body: some View {
+        let attributedString = try! AttributedString(markdown: "Sign up to get **25%** discount")
         VStack {
             if myClass.showLogo {
                 LittleLemonLogo(myClass: myClass)
             }
             MySwiftUIView()
-            Text("Reservations")
+            Text(attributedString)
+                .font(.system(size: 36,
+                              weight: .light,
+                              design: .serif))
+                .italic()
+                .lineLimit(1)
+            TextField("Enter your name", text: $inputName)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+            Text("Hello, \(inputName)!")
             Stepper {
                 Text("Reservation for: \(personCount)")
             } onIncrement: {
