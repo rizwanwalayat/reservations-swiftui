@@ -29,16 +29,21 @@ struct ContentView: View {
             if myClass.showLogo {
                 LittleLemonLogo(myClass: myClass)
             }
-            MySwiftUIView()
+            Text("Little Lemon Restaurant")
+                .font(.title)
+                .foregroundColor(.gray)
+                .background(Color.black)
+                .padding(.init(top: 20, leading: 10, bottom: 20, trailing: 10))
+                .background(.gray)
+            //            MySwiftUIView()
             Text(attributedString)
                 .font(.system(size: 36,
                               weight: .light,
                               design: .serif))
                 .italic()
                 .lineLimit(1)
-            TextField("Enter your name", text: $inputName)
-                .textFieldStyle(.roundedBorder)
-                .padding()
+                .fixedSize(horizontal: false, vertical: true)
+           
             Text("Hello, \(inputName)!")
             Stepper {
                 Text("Reservation for: \(personCount)")
@@ -46,6 +51,16 @@ struct ContentView: View {
                 personCount += 1
             } onDecrement: {
                 personCount = (personCount == 1) ? 1 : personCount - 1
+            }
+            HStack {
+                Label("Thunder", systemImage: "cloud.bolt.rain.fill")
+                Label("Lighting", systemImage: "bolt.fill")
+            }
+            
+            Form {
+                TextField("Enter your name", text: $inputName)
+                    .textFieldStyle(.roundedBorder)
+                    .padding()
             }
         }
         .padding()
