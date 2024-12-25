@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		04B12CBA2D1C99F6001FCEE2 /* ReservationForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B12CB92D1C99F6001FCEE2 /* ReservationForm.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		04B788F02D121D8D0033BA8F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04B12CB92D1C99F6001FCEE2 /* ReservationForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationForm.swift; sourceTree = "<group>"; };
 		04B788DF2D121D8A0033BA8F /* Reservations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reservations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B788EF2D121D8D0033BA8F /* ReservationsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReservationsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04B788F92D121D8D0033BA8F /* ReservationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReservationsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +80,7 @@
 		04B788D62D121D8A0033BA8F = {
 			isa = PBXGroup;
 			children = (
+				04B12CB92D1C99F6001FCEE2 /* ReservationForm.swift */,
 				04B788E12D121D8A0033BA8F /* Reservations */,
 				04B788F22D121D8D0033BA8F /* ReservationsTests */,
 				04B788FC2D121D8D0033BA8F /* ReservationsUITests */,
@@ -236,6 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04B12CBA2D1C99F6001FCEE2 /* ReservationForm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -57,11 +57,7 @@ struct ContentView: View {
                 Label("Lighting", systemImage: "bolt.fill")
             }
             
-            Form {
-                TextField("Enter your name", text: $inputName)
-                    .textFieldStyle(.roundedBorder)
-                    .padding()
-            }
+            ReservationForm()
         }
         .padding()
     }

@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct ReservationForm: View {
+   @State var customerName: String = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            TextField("Type Your Name", text: $customerName, onEditingChanged: { status in
+                if !status {
+                    print("End Editing")
+                }
+            })
+                .onChange(of: customerName) { oldValue, newValue in
+                    print(newValue)
+                }
+                .onSubmit {
+                    print("Submitted")
+                }
+        }
+        .padding()
     }
 }
 
