@@ -25,7 +25,7 @@ struct ContentView: View {
     @ObservedObject var myClass = MyClass()
     var body: some View {
         let attributedString = try! AttributedString(markdown: "Sign up to get **25%** discount")
-        VStack {
+        VStack(alignment: .leading) {
             if myClass.showLogo {
                 LittleLemonLogo(myClass: myClass)
             }
@@ -33,7 +33,8 @@ struct ContentView: View {
                 .font(.title)
                 .foregroundColor(.gray)
                 .background(Color.black)
-                .padding(.init(top: 20, leading: 10, bottom: 20, trailing: 10))
+//                .padding(.init(top: 20, leading: 10, bottom: 20, trailing: 10))
+                .frame(width: 300, height: 100)
                 .background(.gray)
             //            MySwiftUIView()
             Text(attributedString)
@@ -43,7 +44,7 @@ struct ContentView: View {
                 .italic()
                 .lineLimit(1)
                 .fixedSize(horizontal: false, vertical: true)
-           
+           Spacer()
             Text("Hello, \(inputName)!")
             Stepper {
                 Text("Reservation for: \(personCount)")
@@ -52,13 +53,17 @@ struct ContentView: View {
             } onDecrement: {
                 personCount = (personCount == 1) ? 1 : personCount - 1
             }
+            .padding()
             HStack {
                 Label("Thunder", systemImage: "cloud.bolt.rain.fill")
                 Label("Lighting", systemImage: "bolt.fill")
+                Label("Sun", systemImage: "sun.max.fill")
             }
             
             ReservationForm()
+                
         }
+        .frame(width: 300, alignment: .leading)
         .padding()
     }
 }
