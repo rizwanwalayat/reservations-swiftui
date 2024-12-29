@@ -25,7 +25,15 @@ struct ContentView: View {
     @ObservedObject var myClass = MyClass()
     var body: some View {
         let attributedString = try! AttributedString(markdown: "Sign up to get **25%** discount")
-        VStack(alignment: .leading) {
+        VStack {
+            ZStack {
+                Image(systemName: "apple.logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100, height: 100)
+                Text("Apple Man")
+                    .foregroundStyle(.white)
+            }
             if myClass.showLogo {
                 LittleLemonLogo(myClass: myClass)
             }
@@ -54,7 +62,7 @@ struct ContentView: View {
                 personCount = (personCount == 1) ? 1 : personCount - 1
             }
             .padding()
-            HStack {
+            HStack(spacing: 15) {
                 Label("Thunder", systemImage: "cloud.bolt.rain.fill")
                 Label("Lighting", systemImage: "bolt.fill")
                 Label("Sun", systemImage: "sun.max.fill")
