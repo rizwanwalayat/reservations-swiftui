@@ -27,6 +27,24 @@ struct ContentView: View {
         let attributedString = try! AttributedString(markdown: "Sign up to get **25%** discount")
         VStack {
             ZStack {
+                Circle()
+                    .foregroundColor(.gray)
+                Circle()
+                    .scale(x: 0.5, y: 0.5)
+                    .foregroundColor(.red)
+                VStack {
+                    Image(systemName: "person")
+                        .imageScale(.large)
+                        .foregroundColor(.accentColor)
+                    Text("Person")
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+                    HStack (spacing: 20){
+                        Button("One") {}
+                        Button("Two") {}
+                    }
+                }
+            }
+            ZStack {
                 Image(systemName: "apple.logo")
                     .resizable()
                     .scaledToFit()
@@ -71,6 +89,9 @@ struct ContentView: View {
             ReservationForm()
                 
         }
+        .background(Color.blue)
+        .foregroundColor(.white)
+        .font(.system(size: 10))
         .frame(width: 300, alignment: .leading)
         .padding()
     }
